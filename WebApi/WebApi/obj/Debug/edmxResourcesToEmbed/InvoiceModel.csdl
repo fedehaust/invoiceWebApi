@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="parcial2BaseDatosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="invoice">
+    <Key>
+      <PropertyRef Name="invoiceNumber" />
+    </Key>
+    <Property Name="invoiceNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="invoiceDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="customerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="invoiceTotalValue" Type="Int32" />
+    <NavigationProperty Name="invoice_detail" Relationship="Self.FK__invoice_d__invoi__25869641" FromRole="invoice" ToRole="invoice_detail" />
+  </EntityType>
+  <EntityType Name="invoice_detail">
+    <Key>
+      <PropertyRef Name="articleId" />
+    </Key>
+    <Property Name="articleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="articleName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="articlePrice" Type="Double" />
+    <Property Name="invoiceNumber" Type="Int32" />
+    <NavigationProperty Name="invoice" Relationship="Self.FK__invoice_d__invoi__25869641" FromRole="invoice_detail" ToRole="invoice" />
+  </EntityType>
+  <Association Name="FK__invoice_d__invoi__25869641">
+    <End Role="invoice" Type="Self.invoice" Multiplicity="0..1" />
+    <End Role="invoice_detail" Type="Self.invoice_detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="invoice">
+        <PropertyRef Name="invoiceNumber" />
+      </Principal>
+      <Dependent Role="invoice_detail">
+        <PropertyRef Name="invoiceNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="parcial2BaseDatosEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="invoice" EntityType="Self.invoice" />
+    <EntitySet Name="invoice_detail" EntityType="Self.invoice_detail" />
+    <AssociationSet Name="FK__invoice_d__invoi__25869641" Association="Self.FK__invoice_d__invoi__25869641">
+      <End Role="invoice" EntitySet="invoice" />
+      <End Role="invoice_detail" EntitySet="invoice_detail" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

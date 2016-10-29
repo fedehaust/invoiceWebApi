@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="parcial2BaseDatosModelStoreContainer" CdmEntityContainer="parcial2BaseDatosEntities">
+    <EntitySetMapping Name="invoice">
+      <EntityTypeMapping TypeName="parcial2BaseDatosModel.invoice">
+        <MappingFragment StoreEntitySet="invoice">
+          <ScalarProperty Name="invoiceNumber" ColumnName="invoiceNumber" />
+          <ScalarProperty Name="invoiceDate" ColumnName="invoiceDate" />
+          <ScalarProperty Name="customerName" ColumnName="customerName" />
+          <ScalarProperty Name="invoiceTotalValue" ColumnName="invoiceTotalValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="invoice_detail">
+      <EntityTypeMapping TypeName="parcial2BaseDatosModel.invoice_detail">
+        <MappingFragment StoreEntitySet="invoice_detail">
+          <ScalarProperty Name="articleId" ColumnName="articleId" />
+          <ScalarProperty Name="articleName" ColumnName="articleName" />
+          <ScalarProperty Name="articlePrice" ColumnName="articlePrice" />
+          <ScalarProperty Name="invoiceNumber" ColumnName="invoiceNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

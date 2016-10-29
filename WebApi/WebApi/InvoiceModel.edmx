@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="parcial2BaseDatosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="invoice">
+          <Key>
+            <PropertyRef Name="invoiceNumber" />
+          </Key>
+          <Property Name="invoiceNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="invoiceDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="customerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="invoiceTotalValue" Type="int" />
+        </EntityType>
+        <EntityType Name="invoice_detail">
+          <Key>
+            <PropertyRef Name="articleId" />
+          </Key>
+          <Property Name="articleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="articleName" Type="nvarchar" MaxLength="20" />
+          <Property Name="articlePrice" Type="float" />
+          <Property Name="invoiceNumber" Type="int" />
+        </EntityType>
+        <Association Name="FK__invoice_d__invoi__25869641">
+          <End Role="invoice" Type="Self.invoice" Multiplicity="0..1" />
+          <End Role="invoice_detail" Type="Self.invoice_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="invoice">
+              <PropertyRef Name="invoiceNumber" />
+            </Principal>
+            <Dependent Role="invoice_detail">
+              <PropertyRef Name="invoiceNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="parcial2BaseDatosModelStoreContainer">
+          <EntitySet Name="invoice" EntityType="Self.invoice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="invoice_detail" EntityType="Self.invoice_detail" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__invoice_d__invoi__25869641" Association="Self.FK__invoice_d__invoi__25869641">
+            <End Role="invoice" EntitySet="invoice" />
+            <End Role="invoice_detail" EntitySet="invoice_detail" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="parcial2BaseDatosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="invoice">
+          <Key>
+            <PropertyRef Name="invoiceNumber" />
+          </Key>
+          <Property Name="invoiceNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="invoiceDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="customerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="invoiceTotalValue" Type="Int32" />
+          <NavigationProperty Name="invoice_detail" Relationship="Self.FK__invoice_d__invoi__25869641" FromRole="invoice" ToRole="invoice_detail" />
+        </EntityType>
+        <EntityType Name="invoice_detail">
+          <Key>
+            <PropertyRef Name="articleId" />
+          </Key>
+          <Property Name="articleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="articleName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="articlePrice" Type="Double" />
+          <Property Name="invoiceNumber" Type="Int32" />
+          <NavigationProperty Name="invoice" Relationship="Self.FK__invoice_d__invoi__25869641" FromRole="invoice_detail" ToRole="invoice" />
+        </EntityType>
+        <Association Name="FK__invoice_d__invoi__25869641">
+          <End Role="invoice" Type="Self.invoice" Multiplicity="0..1" />
+          <End Role="invoice_detail" Type="Self.invoice_detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="invoice">
+              <PropertyRef Name="invoiceNumber" />
+            </Principal>
+            <Dependent Role="invoice_detail">
+              <PropertyRef Name="invoiceNumber" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="parcial2BaseDatosEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="invoice" EntityType="Self.invoice" />
+          <EntitySet Name="invoice_detail" EntityType="Self.invoice_detail" />
+          <AssociationSet Name="FK__invoice_d__invoi__25869641" Association="Self.FK__invoice_d__invoi__25869641">
+            <End Role="invoice" EntitySet="invoice" />
+            <End Role="invoice_detail" EntitySet="invoice_detail" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="parcial2BaseDatosModelStoreContainer" CdmEntityContainer="parcial2BaseDatosEntities">
+          <EntitySetMapping Name="invoice">
+            <EntityTypeMapping TypeName="parcial2BaseDatosModel.invoice">
+              <MappingFragment StoreEntitySet="invoice">
+                <ScalarProperty Name="invoiceNumber" ColumnName="invoiceNumber" />
+                <ScalarProperty Name="invoiceDate" ColumnName="invoiceDate" />
+                <ScalarProperty Name="customerName" ColumnName="customerName" />
+                <ScalarProperty Name="invoiceTotalValue" ColumnName="invoiceTotalValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="invoice_detail">
+            <EntityTypeMapping TypeName="parcial2BaseDatosModel.invoice_detail">
+              <MappingFragment StoreEntitySet="invoice_detail">
+                <ScalarProperty Name="articleId" ColumnName="articleId" />
+                <ScalarProperty Name="articleName" ColumnName="articleName" />
+                <ScalarProperty Name="articlePrice" ColumnName="articlePrice" />
+                <ScalarProperty Name="invoiceNumber" ColumnName="invoiceNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

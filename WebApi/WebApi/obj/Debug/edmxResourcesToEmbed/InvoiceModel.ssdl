@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="parcial2BaseDatosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="invoice">
+    <Key>
+      <PropertyRef Name="invoiceNumber" />
+    </Key>
+    <Property Name="invoiceNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="invoiceDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="customerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="invoiceTotalValue" Type="int" />
+  </EntityType>
+  <EntityType Name="invoice_detail">
+    <Key>
+      <PropertyRef Name="articleId" />
+    </Key>
+    <Property Name="articleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="articleName" Type="nvarchar" MaxLength="20" />
+    <Property Name="articlePrice" Type="float" />
+    <Property Name="invoiceNumber" Type="int" />
+  </EntityType>
+  <Association Name="FK__invoice_d__invoi__25869641">
+    <End Role="invoice" Type="Self.invoice" Multiplicity="0..1" />
+    <End Role="invoice_detail" Type="Self.invoice_detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="invoice">
+        <PropertyRef Name="invoiceNumber" />
+      </Principal>
+      <Dependent Role="invoice_detail">
+        <PropertyRef Name="invoiceNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="parcial2BaseDatosModelStoreContainer">
+    <EntitySet Name="invoice" EntityType="Self.invoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="invoice_detail" EntityType="Self.invoice_detail" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__invoice_d__invoi__25869641" Association="Self.FK__invoice_d__invoi__25869641">
+      <End Role="invoice" EntitySet="invoice" />
+      <End Role="invoice_detail" EntitySet="invoice_detail" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
