@@ -34,6 +34,10 @@ namespace WebApi.Controllers
         [ResponseType(typeof(invoice))]
         public IHttpActionResult Postinvoice(invoice invoice)
         {
+            /*invoice = new invoice();
+            invoice.invoiceDate = "2016-10-20";
+            invoice.customerName = "Empresa TodoGud";
+            invoice.invoiceTotalValue = 200;*/
             //invoice = new WebApi.invoice();
             if (!ModelState.IsValid)
             {
@@ -56,6 +60,10 @@ namespace WebApi.Controllers
         [Route("api/invoice/details")]
         public IHttpActionResult PostinvoiceDetail(invoice_detail invoice_detail)
         {
+            /*invoice_detail = new invoice_detail();
+            invoice_detail.invoiceNumber = 1;
+            invoice_detail.articleName = "Cosito";
+            invoice_detail.articlePrice = 200;*/
             //invoice_detail = new WebApi.invoice_detail();
             if (!ModelState.IsValid)
             {
