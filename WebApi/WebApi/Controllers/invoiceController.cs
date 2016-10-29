@@ -34,7 +34,7 @@ namespace WebApi.Controllers
         [ResponseType(typeof(invoice))]
         public IHttpActionResult Postinvoice(invoice invoice)
         {
-            invoice = new WebApi.invoice();
+            //invoice = new WebApi.invoice();
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -56,7 +56,7 @@ namespace WebApi.Controllers
         [Route("api/invoice/details")]
         public IHttpActionResult PostinvoiceDetail(invoice_detail invoice_detail)
         {
-            invoice_detail = new WebApi.invoice_detail();
+            //invoice_detail = new WebApi.invoice_detail();
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
