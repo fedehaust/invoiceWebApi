@@ -16,7 +16,7 @@ namespace WebApi.Controllers
     {
         private parcial2BaseDatosEntities db = new parcial2BaseDatosEntities();
 
-        // GET: api/invoice/5
+        // GET: api/invoice/1
         [ResponseType(typeof(invoice))]
         public IHttpActionResult Getinvoice(int id)
         {
@@ -34,7 +34,7 @@ namespace WebApi.Controllers
         [ResponseType(typeof(invoice))]
         public IHttpActionResult Postinvoice(invoice invoice)
         {
-            //invoice = new WebApi.invoice();
+            invoice = new WebApi.invoice();
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -56,7 +56,7 @@ namespace WebApi.Controllers
         [Route("api/invoice/details")]
         public IHttpActionResult PostinvoiceDetail(invoice_detail invoice_detail)
         {
-            //invoice_detail = new WebApi.invoice_detail();
+            invoice_detail = new WebApi.invoice_detail();
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -71,20 +71,6 @@ namespace WebApi.Controllers
             {
                 return CreatedAtRoute("DefaultApi", new { controller = "invoice" }, "No Invoice detail information");
             }
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        private bool invoiceExists(int id)
-        {
-            return db.invoice.Count(e => e.invoiceNumber == id) > 0;
         }
     }
 }
