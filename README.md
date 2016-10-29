@@ -16,6 +16,12 @@ Conectar la BD que el cliente vaya a utilizar de la siguiente manera:
 
 4-Guardar el archivo
 
+Opcion 2: 
+
+-Ir a la pestaña view/Server Explorer
+
+-Cambiar la BD y el servidor.
+
 
 Probar api: 
 
