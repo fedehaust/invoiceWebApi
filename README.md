@@ -25,8 +25,8 @@ https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddom
 
 URLs:
 
-GET: localhost:port/api/invoice/{id} -> muestra la informacion de la factura.
+GET: localhost:56298/api/invoice/{id} -> muestra la informacion de la factura.
 
-POST: localhost:port/api/invoice -> recibiendo desde la app mediante una llamada a ajax un objeto "invoice" la misma guarda la informacion en la BD
+POST: localhost:56298/api/invoice -> recibiendo desde la app mediante una llamada a ajax un objeto "invoice" la misma guarda la informacion en la BD
  
-POST: localhost:port/api/invoice/details -> recibiendo desde la app mediante una llamada a ajax un objeto "invoice_detail" la misma guarda la informacion en la BD
+POST: localhost:56298/api/invoice/details -> recibiendo desde la app mediante una llamada a ajax un objeto "invoice_detail" la misma guarda la informacion en la BD
