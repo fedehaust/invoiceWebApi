@@ -103,13 +103,13 @@ URL:
 
 POST: localhost:56298/api/invoice -> recibiendo desde la app mediante una llamada a ajax un objeto "invoice" la misma guarda la informacion en la BD
 
-![metodopost1postman](https://cloud.githubusercontent.com/assets/13921860/19839429/3a9d27dc-9ec0-11e6-8c14-756695b21e09.png)
+![metodopostconparametros1](https://cloud.githubusercontent.com/assets/13921860/19839881/2286bf74-9ec9-11e6-8461-bc3a4fa2c707.png)
 
 URL:
  
 POST: localhost:56298/api/invoice/details -> recibiendo desde la app mediante una llamada a ajax un objeto "invoice_detail" la misma guarda la informacion en la BD
 
-![metodopost2postman](https://cloud.githubusercontent.com/assets/13921860/19839441/732f9b02-9ec0-11e6-832c-c1d65f99c72e.png)
+![metodopostconparametros2](https://cloud.githubusercontent.com/assets/13921860/19839885/415cbb2e-9ec9-11e6-8469-86b5475a4f6e.png)
 
 En el caso de no utilizar POSTMAN, colocando la misma URL en el navegador, obtendremos el JSON solo para el metodo GET
 
