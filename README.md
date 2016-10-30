@@ -1,4 +1,4 @@
-# invoiceWebApi
+# invoiceWebApi - Kellerman, Haustein, Pastore
 
 Para la utilización óptima de la api web es necesario:
 
@@ -70,4 +70,4 @@ En el caso de no utilizar POSTMAN, colocando las mismas URL en el navegador, obt
 
 {"invoice_detail":[{"articleId":1,"articleName":"Articulo","articlePrice":350.0,"invoiceNumber":1},{"articleId":2,"articleName":"Cosito","articlePrice":200.0,"invoiceNumber":1}],"invoiceNumber":1,"invoiceDate":"2016-10-10","customerName":"Empresa SRL","invoiceTotalValue":200}
 
-Fin del documento
+# Fin del documento
