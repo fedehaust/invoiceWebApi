@@ -105,11 +105,31 @@ POST: localhost:56298/api/invoice -> recibiendo desde la app mediante una llamad
 
 ![metodopostconparametros1](https://cloud.githubusercontent.com/assets/13921860/19839881/2286bf74-9ec9-11e6-8461-bc3a4fa2c707.png)
 
+Parametros de ejemplo (Seleccionar Body/x-www-form-urlencoded):
+
+![parametrospost1](https://cloud.githubusercontent.com/assets/13921860/19839918/0259231c-9eca-11e6-93e3-53071eec70db.png)
+
+invoiceDate --> 2016-10-20
+
+customerName --> Empresa TodoGud
+
+invoiceTotalValue --> 200
+
 URL:
  
 POST: localhost:56298/api/invoice/details -> recibiendo desde la app mediante una llamada a ajax un objeto "invoice_detail" la misma guarda la informacion en la BD
 
 ![metodopostconparametros2](https://cloud.githubusercontent.com/assets/13921860/19839885/415cbb2e-9ec9-11e6-8469-86b5475a4f6e.png)
+
+Parametros de ejemplo (Seleccionar Body/x-www-form-urlencoded):
+
+![parametrospost2](https://cloud.githubusercontent.com/assets/13921860/19839919/09e61dec-9eca-11e6-8b90-2049894493f0.png)
+
+invoiceNumber --> 1
+
+articleName --> Cosito
+
+articlePrice --> 200
 
 En el caso de no utilizar POSTMAN, colocando la misma URL en el navegador, obtendremos el JSON solo para el metodo GET
 
