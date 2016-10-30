@@ -32,7 +32,7 @@ Se abrirá la ventana para agregar conexión.
 
 En este caso el servidor es “FEDEHAUST\SQLEXPRESS” (Como vimos con anterioridad se obtiene desde el gestor de base de datos fácilmente)
 
-Elegimos la base de datos que queremos utilizar, en nuestro caso usamos la de prueba “parcial2BaseDatos” (El archivo bd_schema.sql contiene el script para generar a la misma)
+Elegimos la base de datos que queremos utilizar, en nuestro caso usamos la de prueba “parcial2BaseDatos” (El archivo bd_schema.sql contiene el script para generar a la misma, recomendamos usar un esquema similar para evitar errores)
 
 Luego de esto, tenemos nuestra base conectada
 
