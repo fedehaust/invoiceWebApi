@@ -37,10 +37,7 @@ Opción 2:
 ![irexploradordeservidores](https://cloud.githubusercontent.com/assets/13921860/19838880/fe747b06-9eb6-11e6-887d-b828f5c2f62d.png)
 
 -Cambiar la BD y el servidor.
-
-![irexploradordeservidores](https://cloud.githubusercontent.com/assets/13921860/19838880/fe747b06-9eb6-11e6-887d-b828f5c2f62d.png)
-
-Se abrirá la ventana para agregar conexión.
+ Se abrirá la ventana para agregar conexión.
 
 ![agregarconexion1](https://cloud.githubusercontent.com/assets/13921860/19838944/1add044c-9eb8-11e6-96c9-a59d1866b94f.png)
 
