@@ -12,7 +12,7 @@ Conectar la BD que el cliente vaya a utilizar de la siguiente manera:
 
 2-Localizar el tag < connectionStrings>
 
-3-Modificar en la linea < add... data-source=DIRECCION DEL SERVIDOR ... >
+3-Modificar en la linea < add name=NOMBRE BASE DE DATOS + Entities... data-source=DIRECCION DEL SERVIDOR ... >
 
 Para obtener el nombre del servidor, debe ingresar al gestor de base de datos que posea en su PC. En este caso el servidor es “FEDEHAUST\SQLEXPRESS”
 
