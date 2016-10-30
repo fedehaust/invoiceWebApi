@@ -12,7 +12,7 @@ Conectar la BD que el cliente vaya a utilizar de la siguiente manera:
 
 2-Localizar el tag < connectionStrings>
 
-3-Modificar en la linea < add... data-source=DIRECCION DEL SERVIDOR ... >
+3-Modificar en la linea < add name=NOMBRE DE LA BD + Entities... data-source=DIRECCION DEL SERVIDOR;initial catalog=NOMBRE DE LA BD ... >
 
 4-Guardar el archivo
 
