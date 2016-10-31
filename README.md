@@ -72,11 +72,11 @@ Hacemos clic en el icono de la aplicación
 
 ![iniciarpostman1](https://cloud.githubusercontent.com/assets/13921860/19839043/10cddfb0-9eba-11e6-857b-ee6eeaf79799.png)
 
-![iniciarpostman3](https://cloud.githubusercontent.com/assets/13921860/19839088/d4a1d126-9eba-11e6-9eea-ca546baf3cb7.png)
-
 Si no tenemos cuenta, podemos generar una para utilizar la aplicación, o podemos usarla sin iniciar sesión (Para nuestra prueba es indiferente).
 
 ![iniciarpostman2](https://cloud.githubusercontent.com/assets/13921860/19839046/16d96640-9eba-11e6-9026-db8c644eaf53.png)
+
+![iniciarpostman3](https://cloud.githubusercontent.com/assets/13921860/19839088/d4a1d126-9eba-11e6-9eea-ca546baf3cb7.png)
 
 En el lugar resaltado colocamos las URLs
  
