@@ -104,6 +104,8 @@ POST: localhost:56298/api/invoice -> recibiendo desde la app mediante una llamad
 
 Parametros de ejemplo (Seleccionar Body/x-www-form-urlencoded):
 
+![metodopost_parametros](https://cloud.githubusercontent.com/assets/13921860/19916684/4279a6ec-a09b-11e6-97af-ec67adf1667c.png)
+
 invoiceDate --> 2016/02/16
 
 customerName --> Empresa
@@ -122,6 +124,34 @@ invoice_detail[2].articleName --> Algo3
 
 invoice_detail[2].articlePrice --> 50
 
+###Resultado obtenido:
+
+{
+  "invoiceNumber": 18,
+  "invoiceDate": "2016/02/16",
+  "customerName": "Empresa",
+  "invoiceTotalValue": 350,
+  "invoice_detail": [
+    {
+      "articleId": 38,
+      "articleName": "Algo",
+      "articlePrice": 200,
+      "invoiceNumber": 18
+    },
+    {
+      "articleId": 39,
+      "articleName": "Algo2",
+      "articlePrice": 100,
+      "invoiceNumber": 18
+    },
+    {
+      "articleId": 40,
+      "articleName": "Algo3",
+      "articlePrice": 50,
+      "invoiceNumber": 18
+    }
+  ]
+}
 
 En el caso de no utilizar POSTMAN, colocando la misma URL en el navegador, obtendremos el JSON solo para el metodo GET
 
