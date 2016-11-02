@@ -34,14 +34,17 @@ namespace WebApi.Controllers
         [ResponseType(typeof(invoice))]
         public IHttpActionResult Postinvoice(invoice invoice)
         {
-            /*invoice = new invoice();
-            invoice.invoiceDate = "2016-10-20";
-            invoice.customerName = "Empresa TodoGud";
-            invoice.invoiceTotalValue = 200;*/
-            //invoice = new WebApi.invoice();
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
+            }
+            
+            if(invoice.invoice_detail.Count > 0)
+            {
+                foreach(var key in invoice.invoice_detail)
+                {
+                    db.invoice_detail.Add(key);
+                }
             }
 
             if (invoice != null)
@@ -56,14 +59,10 @@ namespace WebApi.Controllers
         }
 
         // POST: api/invoice/details
-        [ResponseType(typeof(invoice_detail))]
+        /*[ResponseType(typeof(invoice_detail))]
         [Route("api/invoice/details")]
         public IHttpActionResult PostinvoiceDetail(invoice_detail invoice_detail)
         {
-            /*invoice_detail = new invoice_detail();
-            invoice_detail.invoiceNumber = 1;
-            invoice_detail.articleName = "Cosito";
-            invoice_detail.articlePrice = 200;*/
             //invoice_detail = new WebApi.invoice_detail();
             if (!ModelState.IsValid)
             {
@@ -79,6 +78,6 @@ namespace WebApi.Controllers
             {
                 return CreatedAtRoute("DefaultApi", new { controller = "invoice" }, "No Invoice detail information");
             }
-        }
+        }*/
     }
 }
