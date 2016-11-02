@@ -96,6 +96,35 @@ GET: localhost:56298/api/invoice/{id} -> muestra la informacion de la factura (s
 
 ![metodogetpostman](https://cloud.githubusercontent.com/assets/13921860/19839185/1ecc4e92-9ebc-11e6-9c53-d2383fb063a6.png)
 
+###Resultado obtenido:
+
+    {
+      "invoice_detail": [
+        {
+          "articleId": 1,
+          "articleName": "Articulo",
+          "articlePrice": 350,
+          "invoiceNumber": 1
+        },
+        {
+          "articleId": 2,
+          "articleName": "Cosito",
+          "articlePrice": 200,
+          "invoiceNumber": 1
+        },
+        {
+          "articleId": 3,
+          "articleName": "Cosito",
+          "articlePrice": 200,
+          "invoiceNumber": 1
+        }
+      ],
+      "invoiceNumber": 1,
+      "invoiceDate": "2016-10-10",
+      "customerName": "Empresa SRL",
+      "invoiceTotalValue": 200
+    }
+
 URL:
 
 POST: localhost:56298/api/invoice -> recibiendo desde la app mediante una llamada a ajax un objeto "invoice" la misma guarda la informacion en la BD
@@ -126,32 +155,32 @@ invoice_detail[2].articlePrice --> 50
 
 ###Resultado obtenido:
 
-{
-  "invoiceNumber": 18,
-  "invoiceDate": "2016/02/16",
-  "customerName": "Empresa",
-  "invoiceTotalValue": 350,
-  "invoice_detail": [
     {
-      "articleId": 38,
-      "articleName": "Algo",
-      "articlePrice": 200,
-      "invoiceNumber": 18
-    },
-    {
-      "articleId": 39,
-      "articleName": "Algo2",
-      "articlePrice": 100,
-      "invoiceNumber": 18
-    },
-    {
-      "articleId": 40,
-      "articleName": "Algo3",
-      "articlePrice": 50,
-      "invoiceNumber": 18
+      "invoiceNumber": 18,
+      "invoiceDate": "2016/02/16",
+      "customerName": "Empresa",
+      "invoiceTotalValue": 350,
+      "invoice_detail": [
+        {
+          "articleId": 38,
+          "articleName": "Algo",
+          "articlePrice": 200,
+          "invoiceNumber": 18
+        },
+        {
+          "articleId": 39,
+          "articleName": "Algo2",
+          "articlePrice": 100,
+          "invoiceNumber": 18
+        },
+        {
+          "articleId": 40,
+          "articleName": "Algo3",
+          "articlePrice": 50,
+          "invoiceNumber": 18
+        }
+      ]
     }
-  ]
-}
 
 En el caso de no utilizar POSTMAN, colocando la misma URL en el navegador, obtendremos el JSON solo para el metodo GET
 
@@ -161,7 +190,7 @@ En el caso de no utilizar POSTMAN, colocando la misma URL en el navegador, obten
 
 ![metodoget3intexp](https://cloud.githubusercontent.com/assets/13921860/19839547/c06b46e4-9ec2-11e6-921b-9a544dedeae3.png)
 
-{"invoice_detail":[{"articleId":1,"articleName":"Articulo","articlePrice":350.0,"invoiceNumber":1},{"articleId":2,"articleName":"Cosito","articlePrice":200.0,"invoiceNumber":1}],"invoiceNumber":1,"invoiceDate":"2016-10-10","customerName":"Empresa SRL","invoiceTotalValue":200}
+    {"invoice_detail":[{"articleId":1,"articleName":"Articulo","articlePrice":350.0,"invoiceNumber":1},{"articleId":2,"articleName":"Cosito","articlePrice":200.0,"invoiceNumber":1}],"invoiceNumber":1,"invoiceDate":"2016-10-10","customerName":"Empresa SRL","invoiceTotalValue":200}
 
 # Fin del documento
 
