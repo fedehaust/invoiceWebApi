@@ -100,33 +100,28 @@ URL:
 
 POST: localhost:56298/api/invoice -> recibiendo desde la app mediante una llamada a ajax un objeto "invoice" la misma guarda la informacion en la BD
 
-![metodopostconparametros1](https://cloud.githubusercontent.com/assets/13921860/19839881/2286bf74-9ec9-11e6-8461-bc3a4fa2c707.png)
+![metodopostconparametros](https://cloud.githubusercontent.com/assets/13921860/19916541/9ba51e60-a099-11e6-9905-caa5af362f25.png)
 
 Parametros de ejemplo (Seleccionar Body/x-www-form-urlencoded):
 
-![parametrospost1](https://cloud.githubusercontent.com/assets/13921860/19839918/0259231c-9eca-11e6-93e3-53071eec70db.png)
+invoiceDate --> 2016/02/16
 
-invoiceDate --> 2016-10-20
+customerName --> Empresa
 
-customerName --> Empresa TodoGud
+invoiceTotalValue --> 350
 
-invoiceTotalValue --> 200
+invoice_detail[0].articleName --> Algo
 
-URL:
- 
-POST: localhost:56298/api/invoice/details -> recibiendo desde la app mediante una llamada a ajax un objeto "invoice_detail" la misma guarda la informacion en la BD
+invoice_detail[0].articlePrice --> 200
 
-![metodopostconparametros2](https://cloud.githubusercontent.com/assets/13921860/19839885/415cbb2e-9ec9-11e6-8469-86b5475a4f6e.png)
+invoice_detail[1].articleName --> Algo2
 
-Parametros de ejemplo (Seleccionar Body/x-www-form-urlencoded):
+invoice_detail[1].articlePrice --> 100
 
-![parametrospost2](https://cloud.githubusercontent.com/assets/13921860/19839919/09e61dec-9eca-11e6-8b90-2049894493f0.png)
+invoice_detail[2].articleName --> Algo3
 
-invoiceNumber --> 1
+invoice_detail[2].articlePrice --> 50
 
-articleName --> Cosito
-
-articlePrice --> 200
 
 En el caso de no utilizar POSTMAN, colocando la misma URL en el navegador, obtendremos el JSON solo para el metodo GET
 
